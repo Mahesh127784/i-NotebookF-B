@@ -72,6 +72,7 @@ router.put("/noteupdate/:id", fetchuser, async (req, res) => {
     if (!note) {
       return res.status(400).json({ error: "Could not find the note!!!..." });
     }
+    const user = req.userId;
     console.log(user);
     if (note.user.toString() !== user) {
       return res.status(400).json({ error: "Could not find the note!!!" });
